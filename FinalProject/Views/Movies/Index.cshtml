@@ -1,0 +1,86 @@
+@model IEnumerable<Movies>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/wLR8pXY.jpg');
+            background-attachment: fixed;
+        }
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #207820; /* Border for table cells */
+        }
+        .table th:nth-child(1) {
+            background-color: black;
+            color: #33CC33; /* optional: change text color for better contrast */
+        } 
+        .table th:nth-child(2) {
+            background-color: black; 
+            color: #33CC33;
+        }
+        .table th:nth-child(3) {
+            background-color: black; 
+            color: #33CC33;
+        } 
+        .table th:nth-child(4) {
+            background-color: black; 
+            color: #33CC33; 
+        } 
+        .table th:nth-child(5) {
+            background-color: black; 
+            color: #33CC33;
+        }
+        .table td:nth-child(1) {
+            background-color: black;
+            color: #0000FF; /* optional: change text color for better contrast */
+        }
+        .table td:nth-child(2) {
+            background-color: black;
+            color: #0000FF;
+        }
+        .table td:nth-child(3) {
+            background-color: black;
+            color: #0000FF;
+        }
+        .table td:nth-child(4) {
+            background-color: black;
+            color: #0000FF;
+        }
+        .table td:nth-child(5) {
+            background-color: black;
+            color: #0000FF;
+        }
+        
+    </style>
+</head>
+
+<div class="text-center">
+    <h2><img src="https://i.imgur.com/28X4uxx.png" alt="Main Banner" /></h2><br/><br/><br/><br/><br/>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Count</th>
+        <th>Horror Film</th>
+        <th>Year</th>
+        <th>Seen Before</th>
+        <th>Rating</th>
+    </tr>
+    
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.MovieTitle</td>
+            <td>@item.YearOfRelease</td>
+            <td>@item.SeenBefore</td>
+            <td>@item.Rating</td>
+        </tr>
+    }
+</table>
